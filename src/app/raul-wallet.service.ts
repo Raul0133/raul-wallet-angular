@@ -12,4 +12,16 @@ export class RaulWalletService {
   //https://api.coindesk.com/v1/bpi/currentprice/USD.json
 
   constructor(private http: HttpClient) { }
+
+  getUSDBitcoin() {
+    return this.http.get('https://api.coindesk.com/v1/bpi/currentprice/USD.json')
+  }
+
+  getBRLBitcoin() {
+    return this.http.get('https://api.coindesk.com/v1/bpi/currentprice/BRL.json')
+  }
+
+  getEURBitcoin() {
+    return this.http.get('https://api.coindesk.com/v1/bpi/currentprice/EUR.json')
+  }
 }
