@@ -74,3 +74,13 @@ p {
 .link:hover {
   border-bottom: 2px solid black;
 }
+
+.subiu {
+  background-color: #039b03;
+  padding: 0px 6px;
+}
+
+.abaixou {
+  background-color: red;
+  padding: 0px 6px;
+}

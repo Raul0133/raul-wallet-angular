@@ -6,11 +6,23 @@
   />
   <span>Raul Wallet Angular</span>
   <div style="margin: 0 0 0 auto;display: flex;align-items: center;">
-    <div>Cotações:</div>
+    <div>Cotação Atual:</div>
     <div style="margin-left: 20px;">
-      <p>R$ {{BRL | number}}</p>
-      <p>$ {{USD | number}}</p>
-      <p>€ {{EUR | number}}</p>
+      <p>
+        R$ {{BRLAtual | number}}
+        <span class="subiu" *ngIf="BRLSubiu">↑</span>
+        <span class="abaixou" *ngIf="BRLSubiu == false">↓</span>
+      </p>
+      <p>
+        $ {{USDAtual | number}}
+        <span class="subiu" *ngIf="USDSubiu">↑</span>
+        <span class="abaixou" *ngIf="USDSubiu == false">↓</span>
+      </p>
+      <p>
+        € {{EURAtual | number}}
+        <span class="subiu" *ngIf="EURSubiu">↑</span>
+        <span class="abaixou" *ngIf="EURSubiu == false">↓</span>
+      </p>
     </div>
   </div>
   <div style="margin: 0 0 0 auto;">

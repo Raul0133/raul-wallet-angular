@@ -7,9 +7,15 @@ import { RaulWalletService } from './raul-wallet.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  BRL: number = 0
-  USD: number = 0
-  EUR: number = 0
+  BRLAtual!: number
+  BRLAnterior!: number
+  BRLSubiu: any
+  USDAtual!: number
+  USDAnterior!: number
+  USDSubiu!: any
+  EURAtual!: number
+  EURAnterior!: number
+  EURSubiu!: any
 
   constructor(private raulWalletService: RaulWalletService) { }
   ngOnInit() {
@@ -21,20 +27,32 @@ export class AppComponent implements OnInit {
   }
 
   getBRLBitcoin() {
+    this.BRLAnterior = this.BRLAtual == this.BRLAnterior ? this.BRLAnterior : this.BRLAtual
     this.raulWalletService.getBRLBitcoin().subscribe((btc: any) => {
-      this.BRL = btc.bpi.BRL.rate_float
+      this.BRLAtual = btc.bpi.BRL.rate_float
+      if (this.BRLAnterior) {
+        this.BRLAtual == this.BRLAnterior ? null : this.BRLSubiu = this.BRLAnterior > this.BRLAtual
+      }
     })
   }
 
   getUSDBitcoin() {
+    this.USDAnterior = this.USDAtual == this.USDAnterior ? this.USDAnterior : this.USDAtual
     this.raulWalletService.getUSDBitcoin().subscribe((btc: any) => {
-      this.USD = btc.bpi.USD.rate_float
+      this.USDAtual = btc.bpi.USD.rate_float
+      if (this.USDAnterior) {
+        this.USDAtual == this.USDAnterior ? null : this.USDSubiu = this.USDAnterior > this.USDAtual
+      }
     })
   }
 
   getEURBitcoin() {
+    this.EURAnterior = this.EURAtual == this.EURAnterior ? this.EURAnterior : this.EURAtual
     this.raulWalletService.getEURBitcoin().subscribe((btc: any) => {
-      this.EUR = btc.bpi.EUR.rate_float
+      this.EURAtual = btc.bpi.EUR.rate_float
+      if (this.EURAnterior) {
+        this.EURAtual == this.EURAnterior ? null : this.EURSubiu = this.EURAnterior > this.EURAtual
+      }
     })
   }
 
