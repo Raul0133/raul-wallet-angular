@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
     this.raulWalletService.getBRLBitcoin().subscribe((btc: any) => {
       this.BRLAtual = btc.bpi.BRL.rate_float
       if (this.BRLAnterior) {
-        this.BRLAtual == this.BRLAnterior ? null : this.BRLSubiu = this.BRLAnterior > this.BRLAtual
+        this.BRLAtual == this.BRLAnterior ? null : this.BRLSubiu = this.BRLAtual > this.BRLAnterior
       }
     })
   }
@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
     this.raulWalletService.getUSDBitcoin().subscribe((btc: any) => {
       this.USDAtual = btc.bpi.USD.rate_float
       if (this.USDAnterior) {
-        this.USDAtual == this.USDAnterior ? null : this.USDSubiu = this.USDAnterior > this.USDAtual
+        this.USDAtual == this.USDAnterior ? null : this.USDSubiu = this.USDAtual > this.USDAnterior
       }
     })
   }
@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
     this.raulWalletService.getEURBitcoin().subscribe((btc: any) => {
       this.EURAtual = btc.bpi.EUR.rate_float
       if (this.EURAnterior) {
-        this.EURAtual == this.EURAnterior ? null : this.EURSubiu = this.EURAnterior > this.EURAtual
+        this.EURAtual == this.EURAnterior ? null : this.EURSubiu = this.EURAtual > this.EURAnterior
       }
     })
   }
