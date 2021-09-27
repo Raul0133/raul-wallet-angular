@@ -9,17 +9,17 @@
     <div>Cotação Atual:</div>
     <div style="margin-left: 20px;">
       <p>
-        R$ {{BRLAtual | number}}
+        {{BRLAtual | currency: 'BRL'}}
         <span class="subiu" *ngIf="BRLSubiu">↑</span>
         <span class="abaixou" *ngIf="BRLSubiu == false">↓</span>
       </p>
       <p>
-        $ {{USDAtual | number}}
+        {{USDAtual | currency: 'USD'}}
         <span class="subiu" *ngIf="USDSubiu">↑</span>
         <span class="abaixou" *ngIf="USDSubiu == false">↓</span>
       </p>
       <p>
-        € {{EURAtual | number}}
+        {{EURAtual | currency: 'EUR'}}
         <span class="subiu" *ngIf="EURSubiu">↑</span>
         <span class="abaixou" *ngIf="EURSubiu == false">↓</span>
       </p>

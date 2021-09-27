@@ -1,1 +1,10 @@
-<p>raul-wallet works!</p>
+<div style="text-align:center;">
+    <p><strong>Sua carteira:</strong></p>
+    <p>{{BRLAtual | currency: 'BRL'}}</p>
+    <p>{{USDAtual | currency: 'USD'}}</p>
+    <p>{{EURAtual | currency: 'EUR'}}</p>
+    <hr style="width: 50%">
+    <p>Valor em BRL: <input type="number" [(ngModel)]="valor"></p>
+    <button (click)="somarCarteira()">+</button>
+    <button (click)="subtrairCarteira()">-</button>
+</div>
