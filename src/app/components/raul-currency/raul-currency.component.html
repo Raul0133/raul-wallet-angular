@@ -1,1 +1,29 @@
-<p>raul-currency works!</p>
+<p style="text-align:center;"><strong>Histórico de Cotações Lidas:</strong></p>
+<div class="box">
+    <table class="historico">
+        <tr>
+          <th>BRL</th>
+        </tr>
+        <tr *ngFor="let brl of historicoBRL">
+          <td>{{brl | currency: 'BRL'}}</td>
+        </tr>
+    </table>
+    
+    <table class="historico">
+        <tr>
+          <th>USD</th>
+        </tr>
+        <tr *ngFor="let usd of historicoUSD">
+          <td>{{usd | currency: 'USD'}}</td>
+        </tr>
+    </table>
+    
+    <table class="historico">
+        <tr>
+          <th>EUR</th>
+        </tr>
+        <tr *ngFor="let eur of historicoEUR">
+          <td>{{eur | currency: 'EUR'}}</td>
+        </tr>
+    </table>
+</div>
